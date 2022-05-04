@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmilchev <kmilchev@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 10:44:47 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/05/04 00:36:55 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/05/04 12:24:40 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class PhoneBook {
 		
 	private:
 		std::string _format_output(std::string string) const;
+		void _display_all(void) const;
+		void _display_contact(Contact contact) const;
 		Contact	_contacts[8];
 		int		_nContacts;
 		bool	_full;
