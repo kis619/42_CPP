@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmilchev <kmilchev@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 17:31:40 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/05/03 23:30:35 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/05/12 09:04:44 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ int main ()
 		else if (word.compare("EXIT") == 0)
 			break ;
 	}
-	std::cout << "Number of contacts added: " << phoneBook.get_nContacts() << std::endl;
 	return (0);
 }
