@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kmilchev <kmilchev@student.42wolfsburg.    +#+  +:+       +#+         #
+#    By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 17:43:18 by kmilchev          #+#    #+#              #
-#    Updated: 2022/05/04 00:39:31 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/05/12 09:24:06 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ph_book
 
-# CFLAGS =  -Wall -Wextra -Werror -std=c++98
+CFLAGS =  -Wall -Wextra -Werror -std=c++98
 
 SRCs = Contact.cpp PhoneBook.cpp main.cpp
 
