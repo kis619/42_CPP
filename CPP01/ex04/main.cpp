@@ -6,12 +6,12 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 00:34:37 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/05/29 02:53:15 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/05/29 17:35:28 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
-#include "fstream"
+#include <iostream>
+#include <fstream>
 
 int main(int argc, char* argv[])
 {
@@ -26,8 +26,8 @@ int main(int argc, char* argv[])
 	std::string s2 = argv[3];
 	std::string buff;
 	std::size_t match;
-	std::ifstream inputFile(file);
-	std::ofstream outputFile(file + ".replace", std::ios::app);
+	std::ifstream inputFile(file.c_str());
+	std::ofstream outputFile((file + ".replace").c_str(), std::ios::app);
 	int len = s1.length();
 	
 	if (inputFile.is_open() && outputFile.is_open())
@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 		while(getline(inputFile, buff))
 		{
 			
-			while((match = buff.find(s1)) != -1)
+			while((match = buff.find(s1)) != (size_t)-1)
 			{
 				buff.erase(match, len);
 				buff.insert(match, s2);
@@ -44,8 +44,8 @@ int main(int argc, char* argv[])
 		}
 		inputFile.close();
 		outputFile.close();
-		return (EXIT_SUCCESS);
+		return (0);
 	}
 	std::cout << "The file could not be found or opened." << std::endl;
-	return (EXIT_FAILURE);
+	return (1);
 }
