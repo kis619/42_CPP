@@ -6,13 +6,13 @@
 #    By: kmilchev <kmilchev@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/28 17:23:05 by kmilchev          #+#    #+#              #
-#    Updated: 2022/05/29 14:51:08 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/05/29 16:23:08 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-# CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCs = main.cpp Harl.cpp
 
