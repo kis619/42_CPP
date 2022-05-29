@@ -6,13 +6,13 @@
 #    By: kmilchev <kmilchev@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/28 17:23:05 by kmilchev          #+#    #+#              #
-#    Updated: 2022/05/28 18:38:21 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/05/29 02:57:13 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-# CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCs = Zombie.cpp main.cpp zombieHorde.cpp
 
