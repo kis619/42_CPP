@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 08:44:42 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/01 15:35:16 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:15:02 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,22 @@ class Fixed
 		bool operator!=(const Fixed &) const;
 
 		//Arithmetic
-		Fixed operator+(Fixed const &) const;
+		Fixed operator+(const Fixed &) const;
+		Fixed operator-(const Fixed &) const;
+		Fixed operator*(const Fixed &) const;
+		Fixed operator/(const Fixed &) const;
+
+		//Increment Decrement
+		Fixed &operator++(void);
+		Fixed operator++(int);
+		Fixed &operator--(void);
+		Fixed operator--(int);
 		
+		//Min and Max
+		static Fixed &min(Fixed &, Fixed &);
+		const static Fixed &min(const Fixed &, const Fixed &);
+		static Fixed &max(Fixed &, Fixed &);
+		const static Fixed &max(const Fixed &, const Fixed &);
 };
 
 std::ostream& operator<<(std::ostream &o, Fixed const & rhs);
