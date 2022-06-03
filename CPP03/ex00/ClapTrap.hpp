@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:02:47 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/03 19:31:46 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:17:56 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap
 		std::string _name;
 		int _hp;
 		int _energy;
-		int _attack_dmg;
+		int _attackDmg;
 		bool canPerformAction(void);
 		
 	public:

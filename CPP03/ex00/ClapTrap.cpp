@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:07:09 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/03 19:41:05 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:17:56 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(void):
 _name("You"),
 _hp(10),
 _energy(10),
-_attack_dmg(0)
+_attackDmg(0)
 {
 	std::cout << "Clap Trap constructor" <<std::endl;
 }
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(std::string name):
 _name(name),
 _hp(10),
 _energy(10),
-_attack_dmg(0)
+_attackDmg(0)
 {
 	std::cout << "Clap Trap name constructor" <<std::endl;
 }
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
 	this->_name = other._name;
-	this->_attack_dmg = other._attack_dmg;
+	this->_attackDmg = other._attackDmg;
 	this->_energy = other._energy;
 	this->_hp = other._hp;
 
@@ -56,7 +56,7 @@ void ClapTrap::display(void)
 	std::cout << "Name: " << this->_name << std::endl;
 	std::cout << "HP: " << this->_hp << std::endl;
 	std::cout << "Energy: " << this->_energy << std::endl;
-	std::cout << "Attack Damage: " << this->_attack_dmg << std::endl;
+	std::cout << "Attack Damage: " << this->_attackDmg << std::endl;
 }
 
 bool ClapTrap::canPerformAction(void)
@@ -69,7 +69,7 @@ void ClapTrap::attack(const std::string &target)
 	if (this->canPerformAction())
 	{
 		this->_energy -= 1;
-		std::cout << "CT " << this->_name << " attacks " << target << ", causing " << this->_attack_dmg << " points of damage!" << std::endl;
+		std::cout << "CT " << this->_name << " attacks " << target << ", causing " << this->_attackDmg << " points of damage!" << std::endl;
 		return ;
 	}
 	std::cout << this->_name << " is too tired to attack..." << std::endl << "Possibly dead..." << std::endl;
