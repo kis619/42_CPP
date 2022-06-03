@@ -6,7 +6,7 @@
 #    By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:57:36 by kmilchev          #+#    #+#              #
-#    Updated: 2022/06/03 22:36:30 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/06/03 22:47:10 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ CC = c++
 
 CGLAFS = -Werror -Wextra -Wall -std=c++98
 
-SRCs = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCs = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJs = $(SRCs:.cpp=.o)
 
-HEADERS = ClapTrap.hpp ScavTrap.hpp
+HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
-NAME = clappy_trappy
+NAME = fraggy_traggy
 
 RM = rm -rf
 
