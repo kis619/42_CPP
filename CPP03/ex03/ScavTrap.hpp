@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:07:58 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/03 21:51:54 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/04 15:22:59 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCAV_TRAP_H
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap(void);
@@ -25,6 +25,7 @@ class ScavTrap : public ClapTrap
 		
 		void guardGate(void);
 		void attack(const std::string &);
+		void setEnergy(void);	
 };
 
 #endif 

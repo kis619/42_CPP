@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:05:34 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/03 21:54:23 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/04 16:10:30 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ ScavTrap::ScavTrap(const ScavTrap &copy)
 	std::cout << "Scav Trap copy constructor" <<std::endl;
 	*this = copy;
 }
-ScavTrap::ScavTrap(std::string name)
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor" << std::endl;
 	this->_name = name;
@@ -38,7 +39,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap destructor" << std::endl;
+	std::cout << this->_name << ": ScavTrap destructor" << std::endl;
 }
 
 ScavTrap & ScavTrap::operator=(const ScavTrap & other)
@@ -64,4 +65,9 @@ void ScavTrap::attack(const std::string &target)
 void ScavTrap::guardGate(void)
 {
 	std::cout << this->_name <<" is now in Gatekeeper mode" << std::endl;
+}
+
+void ScavTrap::setEnergy(void)
+{
+	this->_energy = 50;
 }

@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 21:07:58 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/03 22:43:35 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/04 15:13:33 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRAG_TRAP_H
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap(void);
@@ -25,6 +25,8 @@ class FragTrap : public ClapTrap
 		
 		void highFiveGuys(void);
 		void attack(const std::string &);
+		void setHP(void);
+		void setDmg(void);
 };
 
 #endif 

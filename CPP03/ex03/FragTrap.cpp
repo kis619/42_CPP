@@ -6,17 +6,16 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:05:34 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/03 22:52:08 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/04 15:37:11 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void) : ClapTrap()
 {
 	std::cout << "FragTrap constructor" << std::endl;
-	this->_name = "You";
 	this->_hp = 100;
 	this->_energy = 100;
 	this->_attackDmg = 30;
@@ -30,7 +29,7 @@ FragTrap::FragTrap(const FragTrap &copy)
 
 FragTrap::FragTrap(std::string name)
 {
-	std::cout << "FragTrap constructor" << std::endl;
+	std::cout << "FragTrap name constructor" << std::endl;
 	this->_name = name;
 	this->_hp = 100;
 	this->_energy = 100;
@@ -65,4 +64,14 @@ void FragTrap::attack(const std::string &target)
 void FragTrap::highFiveGuys(void)
 {
 	std::cout << this->_name << " is high-fiving you" << std::endl;
+}
+
+void FragTrap::setHP(void)
+{
+	this->_hp = 100;
+}
+
+void FragTrap::setDmg(void)
+{
+	this->_attackDmg = 30;
 }
