@@ -6,7 +6,7 @@
 #    By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/05 14:00:12 by kmilchev          #+#    #+#              #
-#    Updated: 2022/06/05 14:29:27 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/06/05 19:18:33 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ HEADERS = Animal.hpp Cat.hpp Dog.hpp
 
 
 ########################################## "WRONG" PROGRAM #####
-NAME_WRONG = anima_asylym
+NAME_WRONG = animal_asylym
 
 SRCs_WRONG = wrongMain.cpp WrongAnimal.cpp WrongCat.cpp
 
@@ -40,7 +40,7 @@ all: $(NAME)
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJs)
+$(NAME): $(OBJs) $(HEADERS)
 	$(CC) $(OBJs) -o $(NAME)
 
 wrong: $(NAME_WRONG)
