@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:05:15 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/07 11:48:40 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:13:22 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(const std::string & name, int grade) : _name(name)
 	setGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name)
 {
 	std::cout << "Bureaucrat: copy constructor" << std::endl;
 	*this = copy;
@@ -33,12 +33,11 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &other)
 {
 	std::cout << "Bureaucrat: copy operator" << std::endl;
-	this->_name = other._name;
 	this->_grade = other._grade;
 	return (*this);
 }
 
-std::string Bureaucrat::getName(void) const
+const std::string Bureaucrat::getName(void) const
 {
 	return (this->_name);
 }
@@ -50,13 +49,24 @@ int Bureaucrat::getGrade(void) const
 
 void Bureaucrat::setGrade(int grade)
 {
-	if (grade < 1)
+	if (grade < MAX_GRADE)
 		throw Bureaucrat::GradeTooHighException();
 
-	if (grade > 150)
+	if (grade > MIN_GRADE)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade = grade;
 }
+
+void Bureaucrat::incrementGrade(void)
+{
+	setGrade(this->_grade - 1);
+}
+
+void Bureaucrat::decrementGrade(void)
+{
+	setGrade(this->_grade + 1);
+}
+
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
@@ -65,5 +75,5 @@ const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade is too low");
+	return ("Grade too low");
 }

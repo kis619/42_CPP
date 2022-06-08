@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 00:48:49 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/08 15:07:42 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:06:42 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,43 @@ static void testSetGradeLow(void)
 	std::cout << "Grade: " << boris.getGrade() << std::endl;
 	boris.setGrade(1341234);
 }
+
+static void testIncrementGradeHappy(void)
+{
+	Bureaucrat elisaveta("Elisaveta", 22);
+	std::cout << "Name: " << elisaveta.getName() << std::endl;
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+	elisaveta.incrementGrade();
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+}
+
+static void testIncrementGradeThrows(void)
+{
+	Bureaucrat elisaveta("Elisaveta", 1);
+	std::cout << "Name: " << elisaveta.getName() << std::endl;
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+	elisaveta.incrementGrade();
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+}
+
+static void testDecrementGradeHappy(void)
+{
+	Bureaucrat elisaveta("Elisaveta", 22);
+	std::cout << "Name: " << elisaveta.getName() << std::endl;
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+	elisaveta.decrementGrade();
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+}
+
+static void testDecrementGradeThrows(void)
+{
+	Bureaucrat elisaveta("Elisaveta", 150);
+	std::cout << "Name: " << elisaveta.getName() << std::endl;
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+	elisaveta.decrementGrade();
+	std::cout << "Grade: " << elisaveta.getGrade() << std::endl;
+}
+
 static void tryCatch(void (*f)(void))
 {
 	try
@@ -65,5 +102,13 @@ int main(void)
 	tryCatch(testSetGradeLow);
 	std::cout << sep << std::endl;
 	tryCatch(testSetGradeHappy);
+	std::cout << sep << std::endl;
+	tryCatch(testIncrementGradeHappy);
+	std::cout << sep << std::endl;
+	tryCatch(testIncrementGradeThrows);
+	std::cout << sep << std::endl;
+	tryCatch(testDecrementGradeHappy);
+	std::cout << sep << std::endl;
+	tryCatch(testDecrementGradeThrows);
 	return (0);
 }

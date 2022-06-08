@@ -6,18 +6,20 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:05:18 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/07 11:45:56 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:12:52 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUR_HPP
 # define BUR_HPP
+# define MIN_GRADE 150
+# define MAX_GRADE 1
 # include <iostream>
 
 class Bureaucrat
 {
 	private:
-		std::string _name;
+		const std::string _name;
 		int _grade;
 		
 	public:
@@ -26,10 +28,13 @@ class Bureaucrat
 		virtual ~Bureaucrat(void);
 		Bureaucrat &operator=(const Bureaucrat &);
 		
-		std::string getName(void) const;
+		const std::string getName(void) const;
 		int getGrade(void) const;
 		void setGrade(int);
+		void incrementGrade(void);
+		void decrementGrade(void);
 		
+		////EXCEPTIONS
 		class GradeTooHighException : public std::exception
 		{
 			private:
