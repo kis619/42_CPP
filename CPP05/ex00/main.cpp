@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 00:48:49 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/08 20:06:42 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:21:50 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,9 @@ int main(void)
 	tryCatch(testDecrementGradeHappy);
 	std::cout << sep << std::endl;
 	tryCatch(testDecrementGradeThrows);
+	
+	std::cout << sep << std::endl;
+	Bureaucrat queen("Elizabeth II", 1);
+	std::cout << queen << std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:05:18 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/08 20:12:52 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:21:08 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ class Bureaucrat
 		};
 };
 
+std::ostream &operator<<(std::ostream &o, const Bureaucrat &);
 #endif

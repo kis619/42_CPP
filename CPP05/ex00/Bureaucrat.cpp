@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:05:15 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/08 20:13:22 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:21:20 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,11 @@ const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade too low");
+}
+
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &Barbara)
+{
+	os << Barbara.getName() << ", bureaucrat grade " << Barbara.getGrade();
+	return (os);
 }
