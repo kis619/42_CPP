@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 20:25:36 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 11:45:15 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:30:40 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void AForm::beSigned(Bureaucrat &debora)
 		throw GradeTooLowException();
 }
 
-void AForm::execute(const Bureaucrat &b)
+void AForm::execute(const Bureaucrat &b) const
 {
 	if (!this->getStatus())
 		throw FormNotSignedException();

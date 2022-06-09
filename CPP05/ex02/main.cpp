@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 00:48:49 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 11:41:26 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:56:38 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 #include "AForm.hpp"
 #include "SchrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "colours_grades.hpp"
 
+
+static void testRoboExecuteHappy(void)
+{
+	Bureaucrat barbara("Barbie", 1);
+	RobotomyRequestForm request("Jimmy");
+	barbara.signForm(request);
+	request.execute(barbara);
+}
 
 static void testPresidentExecuteHappy(void)
 {
@@ -72,6 +81,15 @@ static void testShrubExecuteNotSigned(void)
 	formular.execute(barbara);
 }
 
+static void testExecuteFormHappy(void)
+{
+	Bureaucrat barbara("Barbie", 146);
+	SchrubberyCreationForm formular("B7Ap");
+	barbara.signForm(formular);
+	barbara.executeForm(formular);
+}
+
+
 static void tryCatch(void (*f)(void))
 {
 	try
@@ -95,13 +113,17 @@ int main(void)
 	// std::cout << sep << std::endl;
 	// tryCatch(testShrubExecuteHappy);
 	// std::cout << sep << std::endl;
-	tryCatch(testPresidentExecuteHappy);
+	// tryCatch(testPresidentExecuteHappy);
 	// std::cout << sep << std::endl;
 	// tryCatch(testPresidentExecuteNotSigned);
 	// std::cout << sep << std::endl;
 	// tryCatch(testPresidentExecuteLow);
 	// std::cout << sep << std::endl;
 	// tryCatch(testPresidentExecuteHigh);
+	std::cout << sep << std::endl;
+	tryCatch(testRoboExecuteHappy);
+	std::cout << sep << std::endl;
+	testExecuteFormHappy();
 	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 20:25:35 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 11:45:27 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:22:19 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ class AForm
 	////Miscellaneous
 		void beSigned(Bureaucrat &);
 		virtual void executeSafe(const Bureaucrat &) const = 0;
-		virtual void execute(const Bureaucrat &);
+		void execute(const Bureaucrat &) const;
 		
 	////Exceptions
 	class GradeTooHighException : public std::exception

@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:05:18 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 10:01:35 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:06:29 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat
 		void incrementGrade(void);
 		void decrementGrade(void);
 		void signForm(AForm &);
+		void executeForm(const AForm &);
 		
 		////EXCEPTIONS
 		class GradeTooHighException : public std::exception

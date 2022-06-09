@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 23:05:15 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 11:27:36 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:32:09 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,24 @@ void Bureaucrat::signForm(AForm &f)
 	try
 	{
 		f.beSigned(*this);
-		std::cout << this->getName() << " signed " << f.getNameForm() << std::endl;
+		std::cout << COLOR_GREEN <<this->getName() << " signed " << f.getNameForm() << COLOR_DEFAULT << std::endl;
 	}
 	catch (std::exception &error)
 	{
-		std::cout << this->getName() << " could not sign " << f.getNameForm() << ". Reason: " << error.what() << std::endl;
+		std::cout << COLOR_RED << this->getName() << " could not sign " << f.getNameForm() << ". Reason: " << error.what() << COLOR_DEFAULT << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(const AForm &f)
+{
+	try
+	{
+		f.execute(*this);
+		std::cout << COLOR_GREEN <<this->getName() << " executed " << f.getNameForm() << COLOR_DEFAULT << std::endl;
+	}
+	catch(std::exception &error)
+	{
+		std::cout << COLOR_RED << this->getName() << " could not execute " << f.getNameForm() << ". Reason: " << error.what() << COLOR_DEFAULT << std::endl;
 	}
 }
 

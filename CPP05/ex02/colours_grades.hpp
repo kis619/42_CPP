@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 09:34:20 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/06/09 11:13:59 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 11:49:47 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@
 # define EXEC_PRESIDENT 5
 # define SIGN_SCHRUB 25
 # define EXEC_SCHRUB 5
+# define SIGN_ROBO 72
+# define EXEC_ROBO 45
 #endif
