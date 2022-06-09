@@ -6,11 +6,12 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 23:53:44 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 12:10:15 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:06:12 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robo Request", SIGN_ROBO, EXEC_ROBO), _target(target)
 {
@@ -45,7 +46,7 @@ void RobotomyRequestForm::executeSafe(const Bureaucrat & barb) const
 	bool success = rand() % 2;
 	std::string message;
 	if (success)
-		message = this->_target + " has been robotomised.";
+		message = this->_target + " has been robotomised as ordered by" + barb.getName();
 	else
 		message = "Robotomy failed.";
 	

@@ -6,13 +6,13 @@
 #    By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:57:36 by kmilchev          #+#    #+#              #
-#    Updated: 2022/06/09 11:41:38 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/06/09 13:02:22 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-# CFLAGS = -Werror -Wextra -Wall -Wshadow  -Wno-shadow -std=c++98
+CFLAGS = -Werror -Wextra -Wall -Wshadow  -Wno-shadow -std=c++98
 
 SRCs =	main.cpp Bureaucrat.cpp AForm.cpp \
 		SchrubberyCreationForm.cpp \

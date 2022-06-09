@@ -6,14 +6,14 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 23:56:43 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 11:30:01 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:06:19 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOT_HPP
 # define ROBOT_HPP
 # include "AForm.hpp"
-
+# include <cstdlib>
 class RobotomyRequestForm : public AForm
 {
 	public:

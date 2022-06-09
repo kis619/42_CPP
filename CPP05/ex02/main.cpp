@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 00:48:49 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/09 12:56:38 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:02:47 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,19 +107,19 @@ int main(void)
 {
 	std::string sep = "___________________________";
 
-	// tryCatch(testShrubExecuteLow);
-	// std::cout << sep << std::endl;
-	// tryCatch(testShrubExecuteNotSigned);
-	// std::cout << sep << std::endl;
-	// tryCatch(testShrubExecuteHappy);
-	// std::cout << sep << std::endl;
-	// tryCatch(testPresidentExecuteHappy);
-	// std::cout << sep << std::endl;
-	// tryCatch(testPresidentExecuteNotSigned);
-	// std::cout << sep << std::endl;
-	// tryCatch(testPresidentExecuteLow);
-	// std::cout << sep << std::endl;
-	// tryCatch(testPresidentExecuteHigh);
+	tryCatch(testShrubExecuteLow);
+	std::cout << sep << std::endl;
+	tryCatch(testShrubExecuteNotSigned);
+	std::cout << sep << std::endl;
+	tryCatch(testShrubExecuteHappy);
+	std::cout << sep << std::endl;
+	tryCatch(testPresidentExecuteHappy);
+	std::cout << sep << std::endl;
+	tryCatch(testPresidentExecuteNotSigned);
+	std::cout << sep << std::endl;
+	tryCatch(testPresidentExecuteLow);
+	std::cout << sep << std::endl;
+	tryCatch(testPresidentExecuteHigh);
 	std::cout << sep << std::endl;
 	tryCatch(testRoboExecuteHappy);
 	std::cout << sep << std::endl;
