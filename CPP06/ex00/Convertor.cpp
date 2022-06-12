@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:07:09 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 20:30:57 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/12 20:33:13 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ bool Convertor::isDouble(void)
 	double num;
 	try
 	{
-		num = stof(this->_input);	//str to double
+		num = stod(this->_input);
 	}
 	catch(std::exception & error)
 	{
