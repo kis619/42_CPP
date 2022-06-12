@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:52:39 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 21:10:55 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:05:38 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,31 @@
 # include <math.h>
 # include <cmath>
 # include <iomanip>
+# define INTEGER "Integer"
+# define FLOAT "Float"
+# define DOUBLE "Double"
+# define SPECIAL "Special"
+# define CHARACTER "Char"
+# define ILLEGAL "Illegal"
+
 class Convertor
 {
 	private:
 		
 		std::string _input;
-		int		i;
-		double	d;
-		float	f;
-		char	c;
+		std::string _typeStr;
+		int		_i;
+		double	_d;
+		float	_f;
+		char	_c;
 		
-		std::string _displayInteger;
-		std::string _displayDouble;
-		std::string _displayFloat;
-		std::string _displayChar;
-		////Display
-		void display(void);
 		
 		////Conversions
 		void makeConversions(void);
 		void fromInt(void);
+		void fromFloat(void);
+		void fromDouble(void);
+		void fromChar(void);
 		
 		////Check data type
 		int determineType(void) const;
@@ -53,6 +58,8 @@ class Convertor
 		int _type;
 		Convertor();
 		void convert(std::string input);
+		////Display
+		void display(void);
 };
 
 enum type

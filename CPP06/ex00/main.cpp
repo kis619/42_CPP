@@ -6,29 +6,11 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 12:56:02 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 21:05:15 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/13 00:56:20 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Conv.hpp"
-// # include <cstdlib>
-
-// int determineType(std::string input)
-// {
-// 	int type = -1;
-	
-// 	std::string pseudoFloatLiterals[3] = {"-inff", "+inff", "nanf"};
-// 	std::string pseudoDoubleLiterals[3] = {"-inf", "+inf", "nan"};
-// 	for (int i = 0; i < 3; i++)
-// 	{
-// 		if (pseudoFloatLiterals[i] == input)
-// 			return (isSPECIAL_F);
-// 		if (pseudoDoubleLiterals[i] == input)
-// 			return (isSPECIAL_D);
-// 	}
-	
-// 	return (type);
-// }
 
 // void exec(std::string input, int type)
 // {
@@ -64,38 +46,12 @@ int main(int argc, char *argv[])
 
 	Convertor me;
 	me.convert(argv[1]);
-	// switch (me._type)
-	// {
-	// case 0:
-	// 	std::cout << "isINT" << std::endl;
-	// 	break ;
-	// case 1:
-	// 	std::cout << "isCHAR" << std::endl;
-	// 	break ;
-	// case 2:
-	// 	std::cout << "isFLOAT" << std::endl;
-	// 	break ;
-	// case 3:
-	// 	std::cout << "isDOUBLE" << std::endl;
-	// 	break ;
-	// case 4:
-	// 	std::cout << "isSPECIAL_F" << std::endl;
-	// 	break ;
-	// case 5:
-	// 	std::cout << "isSPECIAL_D" << std::endl;
-	// 	break ;
-	// default:
-	// 	std::cout << "isILLEGAL" << std::endl;
-	// 	break ;
-		
-	// }
-	// double a = 123.;
-	// std::cout << me._type << std::endl;
-	// std::cout << std::fixed << std::endl;
-	// std::cout <<  std::numeric_limits<float>::max() << std::endl;
-	// std::cout <<  std::numeric_limits<float>::min() << std::endl;
-	// std::cout <<  -123.f << std::endl;
- 	// float a = 12.1f;
-	// std::cout <<  a << std::endl;
+	me.display();
+	// float f = 200.1f;
+	// int i = static_cast<int>(f);
+	// std::cout << i <<std::endl;
+
+
+	
 	return (0);
 }

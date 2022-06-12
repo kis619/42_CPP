@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 20:39:48 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 20:52:17 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:40:58 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 ////Return the enum of the correct type
 int Convertor::determineType() const
 {
-	if (!(this->isNumber()))
-		return (isILLEGAL);
-	if (this->isChar())
-		return (isCHAR);
 	if (this->isFloatPseudoLiterals())
 		return (isSPECIAL_F);
 	if (this->isDoublePseudoLiterals())
 		return (isSPECIAL_D);
+	if (!(this->isNumber()))
+		return (isILLEGAL);
+	if (this->isChar())
+		return (isCHAR);
 	if (this->isInteger())
 		return (isINT);
 	if (this->isFloat())

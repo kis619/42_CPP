@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:07:09 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 21:15:06 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:51:30 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,59 +28,37 @@ void Convertor::convert(std::string input)
 }
 
 void Convertor::display(void)
-{
+{	
+	std::string impossible = "impossible";
+	
+	std::cout << "Type    : " << this->_typeStr << std::endl;
+
+	////Not a valid number
 	if (this->_type == isILLEGAL)
 	{
-		std::cout << "Integer: "	<< this->_displayInteger << std::endl;
-		std::cout << "Double: "		<< this->_displayDouble << std::endl;
-		std::cout << "Float: "		<< this->_displayFloat <<std::endl;
-		std::cout << "Char: "		<< this->_displayChar << std::endl;
+		std::cout << "Integer : " << impossible << std::endl;
+		std::cout << "Char    : " << impossible << std::endl;
+		std::cout << "Double  : " << impossible << std::endl;
+		std::cout << "FLoat   : " << impossible << std::endl;
+		return ;
 	}
 	
-	if (this->c < 32 || this->c >= 127)
-		this->_displayChar = "not displayable";
-	std::cout << "Integer: " << this->_displayInteger << std::endl;
-	std::cout << "Double: " << this->_displayDouble << (static_cast<bool>(std::fmod(this->d, 1)) ? "" : ".0") << std::endl;
-	std::cout << "Float: " << this->_displayFloat << (static_cast<bool>(std::fmod(this->f, 1)) ? "f" : ".0f") <<std::endl;
-	std::cout << "Char: " << this->_displayChar << std::endl;
+	////Integer
+	if (this->_f < INT32_MIN || this->_f >= INT32_MAX || this->_type == isSPECIAL_D || this->_type == isSPECIAL_F)
+		std::cout << "Integer : " << impossible << std::endl;
+	else
+		std::cout << "Integer : " << this->_i << std::endl;
+	
+	////Character
+	if (this->_f < 0 || this->_f >= 255 || this->_type == isSPECIAL_D || this->_type == isSPECIAL_F)
+		std::cout << "Char    : " << impossible << std::endl;
+	else if (this->_c < 32 || this->_c >= 127)
+		std::cout << "Char    : not displayable" << std::endl;
+	else
+		std::cout << "Char    : '" << this->_c << "'"<< std::endl;
+	
+	////Double and Float
+	std::cout << "Double  : " << this->_d << (static_cast<bool>(std::fmod(this->_d, 1)) ? "" : ".0") << std::endl;
+	std::cout << "Float   : " << this->_f << (static_cast<bool>(std::fmod(this->_f, 1)) ? "f" : ".0f") <<std::endl;
 }
-void Convertor::fromInt(void)
-{
-	this->i = stoi(this->_input);
-	this->d = static_cast<double>(this->i);
-	this->f = static_cast<float>(this->i);
-	this->c = static_cast<char>(this->i);
 
-	std::cout << "Integer: " << this->i << std::endl;
-	std::cout << "Double: " << this->d << (static_cast<bool>(std::fmod(this->d, 1)) ? "" : ".0") << std::endl;
-	std::cout << "Float: " << this->f << (static_cast<bool>(std::fmod(this->f, 1)) ? "f" : ".0f") <<std::endl;
-	std::cout << "Char: " << this->c << std::endl;
-}
-
-void Convertor::makeConversions(void)
-{
-	switch (this->_type)
-	{
-	case 0:
-		fromInt();
-		break ;
-	case 1:
-		std::cout << "isCHAR" << std::endl;
-		break ;
-	case 2:
-		std::cout << "isFLOAT" << std::endl;
-		break ;
-	case 3:
-		std::cout << "isDOUBLE" << std::endl;
-		break ;
-	case 4:
-		std::cout << "isSPECIAL_F" << std::endl;
-		break ;
-	case 5:
-		std::cout << "isSPECIAL_D" << std::endl;
-		break ;
-	default:
-		std::cout << "isILLEGAL" << std::endl;
-		break ;
-	}
-}
