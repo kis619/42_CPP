@@ -6,7 +6,7 @@
 #    By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:57:36 by kmilchev          #+#    #+#              #
-#    Updated: 2022/06/12 17:40:15 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/06/12 20:46:13 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Werror -Wextra -Wall -Wshadow  -Wno-shadow -std=c++98
 
-SRCs = main.cpp Convertor.cpp
+SRCs = main.cpp Convertor.cpp DetermineDataType.cpp
 #fromDouble.cpp fromFloat.cpp fromInt.cpp fromChar.cpp
 		
 OBJs := $(SRCs:.cpp=.o)

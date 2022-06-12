@@ -6,163 +6,81 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:07:09 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 20:33:13 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/12 21:15:06 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Conv.hpp"
-#include <iostream>
-#include <cmath>
-# include <limits>
-# include <iomanip>
-# include "Conv.hpp"
+
 //Constructor
-Convertor::Convertor() : _type(isILLEGAL)
+Convertor::Convertor(void) : _type(isILLEGAL)
 {
 }
 
-//Checks if the input is one of the float pseudo literals.
-bool Convertor::isFloatPseudoLiterals()
-{
-	std::string pseudoFloatLiterals[5] = {"-inff", "+inff", "nanf", "inff", "NaNf"};
-	for (int i = 0; i < 5; i++)
-	{
-		if (pseudoFloatLiterals[i] == this->_input)
-			return (true);
-	}
-	return (false);
-}
 
-//Checks if the input is one of the double pseudo literals.
-bool Convertor::isDoublePseudoLiterals()
-{
-	std::string pseudoDoubleLiterals[5] = {"-inf", "+inf", "nan", "inf", "NaN"};
-	for (int i = 0; i < 5; i++)
-	{
-		if (pseudoDoubleLiterals[i] == this->_input)
-			return (true);
-	}
-	return (false);
-}
 
 void Convertor::convert(std::string input)
 {
 	this->_input = input;
 	this->_type = determineType();
-}
-
-////Checks if the string value can be an actual INT, DOUBLE or FLOAT
-bool Convertor::isNumber(void)
-{
-	int len = this->_input.length();
-	int deciamlPoints = 0;
+	makeConversions();
 	
-	if (this->_input[0] != '-' && this->_input[0] != '+' && !isdigit(this->_input[0]))
-		return (false);
-
-	for (int i = 1; i < len; i++)
-	{
-		if (this->_input[i] == '.')
-			deciamlPoints++ ;
-		else if(this->_input[i] == 'f' && i + 1 == len)
-			break ;
-		else if ((!isdigit(this->_input[i])) || (deciamlPoints > 1))
-			return (false);
-	}
-	return (true);	
 }
 
-////Checks if the NUMBER provided as a string is an INT
-bool Convertor::isInteger(void)
+void Convertor::display(void)
 {
-	// if (!isNumber()) //I do not need to protect, but could be done
-	// 	return (false);
-	for (size_t i = 1; i < this->_input.length() ; i++)
+	if (this->_type == isILLEGAL)
 	{
-		if (!isdigit(this->_input[i]))
-			return (false);
+		std::cout << "Integer: "	<< this->_displayInteger << std::endl;
+		std::cout << "Double: "		<< this->_displayDouble << std::endl;
+		std::cout << "Float: "		<< this->_displayFloat <<std::endl;
+		std::cout << "Char: "		<< this->_displayChar << std::endl;
 	}
 	
-	long int num;
-	try
-	{
-		num = stol(this->_input);
-	}
-	catch(std::exception & error)
-	{
-		return (false);
-	}
-		
-	if (num > std::numeric_limits<int>::max() || num < std::numeric_limits<int>::min())
-		return (false);
-	return (true);
+	if (this->c < 32 || this->c >= 127)
+		this->_displayChar = "not displayable";
+	std::cout << "Integer: " << this->_displayInteger << std::endl;
+	std::cout << "Double: " << this->_displayDouble << (static_cast<bool>(std::fmod(this->d, 1)) ? "" : ".0") << std::endl;
+	std::cout << "Float: " << this->_displayFloat << (static_cast<bool>(std::fmod(this->f, 1)) ? "f" : ".0f") <<std::endl;
+	std::cout << "Char: " << this->_displayChar << std::endl;
+}
+void Convertor::fromInt(void)
+{
+	this->i = stoi(this->_input);
+	this->d = static_cast<double>(this->i);
+	this->f = static_cast<float>(this->i);
+	this->c = static_cast<char>(this->i);
+
+	std::cout << "Integer: " << this->i << std::endl;
+	std::cout << "Double: " << this->d << (static_cast<bool>(std::fmod(this->d, 1)) ? "" : ".0") << std::endl;
+	std::cout << "Float: " << this->f << (static_cast<bool>(std::fmod(this->f, 1)) ? "f" : ".0f") <<std::endl;
+	std::cout << "Char: " << this->c << std::endl;
 }
 
-////Checks if the NUMBER provided as a string is a FLOAT
-bool Convertor::isFloat(void)
+void Convertor::makeConversions(void)
 {
-	// if (!isNumber()) //I do not need to protect, but could be done
-	// 	return (false);
-	if (this->_input[this->_input.length() - 1] != 'f')
-		return (false);
-		
-	float num;
-	try
+	switch (this->_type)
 	{
-		num = stof(this->_input);	
+	case 0:
+		fromInt();
+		break ;
+	case 1:
+		std::cout << "isCHAR" << std::endl;
+		break ;
+	case 2:
+		std::cout << "isFLOAT" << std::endl;
+		break ;
+	case 3:
+		std::cout << "isDOUBLE" << std::endl;
+		break ;
+	case 4:
+		std::cout << "isSPECIAL_F" << std::endl;
+		break ;
+	case 5:
+		std::cout << "isSPECIAL_D" << std::endl;
+		break ;
+	default:
+		std::cout << "isILLEGAL" << std::endl;
+		break ;
 	}
-	catch(std::exception & error)
-	{
-		return (false);
-	}
-	if (num > std::numeric_limits<float>::max() || num < -std::numeric_limits<float>::max())
-		return (false);
-	return (true);	
-}
-
-////Checks if the NUMBER provided as a string is a DOUBLE
-bool Convertor::isDouble(void)
-{
-	// if (!isNumber()) //I do not need to protect, but could be done
-	// 	return (false);
-	
-	if (this->_input.find('.') == std::string::npos)
-		return (false);
-	double num;
-	try
-	{
-		num = stod(this->_input);
-	}
-	catch(std::exception & error)
-	{
-		return (false);
-	}
-	if (num > std::numeric_limits<double>::max() || num < -std::numeric_limits<double>::max())
-		return (false);
-	return (true);	
-}
-
-////Return the enum of the correct type
-int Convertor::determineType()
-{
-	if (this->_input.length() == 1)
-	{
-		if(isdigit(this->_input[0]))
-			return (isINT);
-		return (isCHAR);
-	}
-	if (isFloatPseudoLiterals())
-		return (isSPECIAL_F);
-	if (isDoublePseudoLiterals())
-		return (isSPECIAL_D);
-	if (!isNumber())
-		return (isILLEGAL);
-	if (isInteger())
-		return (isINT);
-	if (isFloat())
-		return (isFLOAT);
-	if (isDouble())
-		return (isDOUBLE);
-		
-	return (44);				
 }

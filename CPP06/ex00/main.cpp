@@ -6,15 +6,10 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 12:56:02 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 20:19:02 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/12 21:05:15 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "conversions.hpp"
-#include <iostream>
-#include <cmath>
-# include <limits>
-# include <iomanip>
 # include "Conv.hpp"
 // # include <cstdlib>
 
@@ -69,31 +64,31 @@ int main(int argc, char *argv[])
 
 	Convertor me;
 	me.convert(argv[1]);
-	switch (me._type)
-	{
-	case 0:
-		std::cout << "isINT" << std::endl;
-		break ;
-	case 1:
-		std::cout << "isCHAR" << std::endl;
-		break ;
-	case 2:
-		std::cout << "isFLOAT" << std::endl;
-		break ;
-	case 3:
-		std::cout << "isDOUBLE" << std::endl;
-		break ;
-	case 4:
-		std::cout << "isSPECIAL_F" << std::endl;
-		break ;
-	case 5:
-		std::cout << "isSPECIAL_D" << std::endl;
-		break ;
-	default:
-		std::cout << "isILLEGAL" << std::endl;
-		break ;
+	// switch (me._type)
+	// {
+	// case 0:
+	// 	std::cout << "isINT" << std::endl;
+	// 	break ;
+	// case 1:
+	// 	std::cout << "isCHAR" << std::endl;
+	// 	break ;
+	// case 2:
+	// 	std::cout << "isFLOAT" << std::endl;
+	// 	break ;
+	// case 3:
+	// 	std::cout << "isDOUBLE" << std::endl;
+	// 	break ;
+	// case 4:
+	// 	std::cout << "isSPECIAL_F" << std::endl;
+	// 	break ;
+	// case 5:
+	// 	std::cout << "isSPECIAL_D" << std::endl;
+	// 	break ;
+	// default:
+	// 	std::cout << "isILLEGAL" << std::endl;
+	// 	break ;
 		
-	}
+	// }
 	// double a = 123.;
 	// std::cout << me._type << std::endl;
 	// std::cout << std::fixed << std::endl;
