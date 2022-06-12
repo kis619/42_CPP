@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:07:09 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/12 20:19:59 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/12 20:30:57 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,9 @@ bool Convertor::isDouble(void)
 {
 	// if (!isNumber()) //I do not need to protect, but could be done
 	// 	return (false);
-		
+	
+	if (this->_input.find('.') == std::string::npos)
+		return (false);
 	double num;
 	try
 	{
