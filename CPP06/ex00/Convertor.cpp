@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:07:09 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/13 01:51:30 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/13 02:13:00 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@ Convertor::Convertor(void) : _type(isILLEGAL)
 {
 }
 
-
-
 void Convertor::convert(std::string input)
 {
 	this->_input = input;
 	this->_type = determineType();
 	makeConversions();
-	
 }
 
 void Convertor::display(void)

@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:52:39 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/13 01:05:38 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/13 02:11:45 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Convertor
 		
 		std::string _input;
 		std::string _typeStr;
+		int		_type;
 		int		_i;
 		double	_d;
 		float	_f;
@@ -55,10 +56,8 @@ class Convertor
 		bool isDouble(void) const;
 		
 	public:
-		int _type;
 		Convertor();
 		void convert(std::string input);
-		////Display
 		void display(void);
 };
 
