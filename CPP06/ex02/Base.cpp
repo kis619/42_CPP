@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 03:00:15 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/13 03:49:41 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:51:56 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,49 +44,15 @@ void	identify(Base * p)
 		std::cout << "Class <C>" << std::endl;
 }
 
-// void	identify(Base & p)
-// {
-// 	try
-// 	{
-// 		dynamic_cast<A &>(p);
-// 		std::cout << "Class <A>" << std::endl;
-// 		return ;
-// 	}
-// 	catch(std::bad_cast &e)
-// 	{
-// 		std::cerr << e.what() << std::endl;
-// 	}
-// 	try
-// 	{
-// 		dynamic_cast<B &>(p);
-// 		std::cout << "Class <B>" << std::endl;
-// 		return ;
-// 	}
-// 	catch(std::bad_cast &e)
-// 	{
-// 		std::cerr << e.what() << std::endl;
-// 	}
-// 	try
-// 	{
-// 		dynamic_cast<C &>(p);
-// 		std::cout << "Class <C>" << std::endl;
-// 		return ;
-// 	}
-// 	catch(std::bad_cast &e)
-// 	{
-// 		std::cerr << e.what() << std::endl;
-// 	}
-// }
-
 void	identify(Base & p)
 {
 	try
 	{
-		dynamic_cast<A &>(p);
+		(void) dynamic_cast<A &>(p);
 		std::cout << "Class <A>" << std::endl;
 		return ;
 	}
-	catch (std::exception & error)
+	catch (std::bad_cast & error)
 	{
 		std::cerr << error.what()<< std::endl;
 	}
@@ -96,7 +62,7 @@ void	identify(Base & p)
 		std::cout << "Class <B>" << std::endl;
 		return ;
 	}
-	catch (std::exception & error)
+	catch (std::bad_cast & error)
 	{
 		std::cerr<< error.what()<< std::endl;
 	}
@@ -106,7 +72,7 @@ void	identify(Base & p)
 		std::cout << "Class <C>" << std::endl;
 		return ;
 	}
-	catch (std::exception & error)
+	catch (std::bad_cast & error)
 	{
 		std::cerr  << error.what() << std::endl;
 	}
