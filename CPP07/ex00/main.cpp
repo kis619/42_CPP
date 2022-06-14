@@ -6,11 +6,11 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:28:48 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/14 17:02:54 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:48:58 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "templates.hpp"
 #include <iostream>
 
 int main(void)
