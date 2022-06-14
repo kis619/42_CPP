@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 20:39:48 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/13 01:40:58 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/14 21:20:34 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int Convertor::determineType() const
 		return (isSPECIAL_F);
 	if (this->isDoublePseudoLiterals())
 		return (isSPECIAL_D);
-	if (!(this->isNumber()))
-		return (isILLEGAL);
 	if (this->isChar())
 		return (isCHAR);
+	if (!(this->isNumber()))
+		return (isILLEGAL);
 	if (this->isInteger())
 		return (isINT);
 	if (this->isFloat())
@@ -152,5 +152,6 @@ bool Convertor::isChar() const
 {
 	if (this->_input.length() == 1 && !isdigit(this->_input[0]))
 		return (true);
+	std::cout << "here " << std::endl;
 	return (false);
 }
