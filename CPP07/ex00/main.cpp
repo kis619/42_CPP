@@ -6,38 +6,12 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:28:48 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/14 17:00:15 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:02:54 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "templates.hpp"
+
 #include <iostream>
-
-template <typename T>
-void swap(T &a, T &b)
-{
-	T temp;
-	
-	temp = a;
-	a = b;
-	b = temp;
-}
-
-template <typename T>
-T &min(T &a, T &b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-template <typename T>
-T &max(T &a, T &b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
 
 int main(void)
 {
