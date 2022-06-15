@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:39:51 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/15 13:44:37 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:07:21 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ Array<T>::Array(const Array <T>& copy)
 template<typename T>
 Array<T>::~Array(void)
 {
-	delete[] this->_arry; //need this?
+	if (this->_arry)
+		delete[] this->_arry;
 }
 
 template<typename T>
@@ -48,9 +49,7 @@ Array<T> & Array<T>::operator=(const Array <T>& other)
 template <typename T>
 T & Array<T>::operator[](size_t index)
 {
-	// ;
-	
-	if (index < 0 || index >= this->_size)
+	if (index >= this->_size)
     	throw std::out_of_range( "Index out of Range" );
 		
 	return(this->_arry[index]);
