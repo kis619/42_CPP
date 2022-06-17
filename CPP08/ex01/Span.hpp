@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 08:54:41 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/17 11:24:01 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/17 13:18:27 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SPAN_HPP
 # include <vector>
 # include <stdexcept>
+# include <cmath>
 # define COLOR_RED "\033[31;1m"
 # define COLOR_GREEN "\033[32;1m"
 # define COLOR_DEFAULT "\033[0m"
