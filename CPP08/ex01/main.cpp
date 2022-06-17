@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 08:54:35 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/17 11:20:55 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/17 13:16:20 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,19 @@ int main(void)
 		s3.addNumber(i + 10);
 	}
 	s3.addMultipleNUmbers(nums.begin(), nums.end());
-	for(int i = 0; i < s3.getSpan().size(); i++)
+	for(unsigned int i = 0; i < s3.getSpan().size(); i++)
 		std::cout << s3.getSpan().at(i) << " ";
 	
 	std::cout << std::endl;
-	
-	
+
+	///////////////////FOUR
+	Span sp = Span(5);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	return 0;
 }

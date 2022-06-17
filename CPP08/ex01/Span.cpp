@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 08:54:39 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/17 11:23:20 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/17 13:17:26 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ unsigned int Span::getShortLongSpan(MAX_MIN span) const
 	int currDiff;
 	maxSpan = minSpan = abs(this->_span.at(0) - this->_span.at(1));
 	
-	for (int i = 0; i < this->_maxAmt; i++)
+	for (unsigned int i = 0; i < this->_maxAmt; i++)
 	{
-		for(int j = i + 1; j < this->_maxAmt; j++)
+		for(unsigned int j = i + 1; j < this->_maxAmt; j++)
 		{
 			currDiff = abs(_span[i] - _span[j]);
 			if (currDiff < minSpan)
