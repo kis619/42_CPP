@@ -6,7 +6,7 @@
 #    By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 09:10:07 by kmilchev          #+#    #+#              #
-#    Updated: 2022/06/17 10:21:37 by kmilchev         ###   ########.fr        #
+#    Updated: 2022/06/17 13:15:49 by kmilchev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@
 
 CC = c++
 
-# CFLAGS = -Werror -Wextra -Wall -Wshadow  -Wno-shadow -std=c++98
+CFLAGS = -Werror -Wextra -Wall -Wshadow  -Wno-shadow -std=c++98
 
 SRCs = main.cpp Span.cpp
 		
