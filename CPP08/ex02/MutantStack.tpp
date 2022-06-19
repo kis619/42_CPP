@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:57:12 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/17 15:33:06 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:38:25 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ MutantStack<T>::MutantStack(const MutantStack &copy)
 template <typename T> 
 MutantStack<T> & MutantStack<T>::operator=(const MutantStack<T> &other)
 {
+	return(other);
 }
 
 template <typename T> 
