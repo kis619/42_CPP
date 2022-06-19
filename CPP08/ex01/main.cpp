@@ -6,7 +6,7 @@
 /*   By: kmilchev <kmilchev@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 08:54:35 by kmilchev          #+#    #+#             */
-/*   Updated: 2022/06/17 13:16:20 by kmilchev         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:35:59 by kmilchev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ int main(void)
 		std::cerr << COLOR_RED << "Exception caught: " << e.what() << COLOR_DEFAULT << std::endl;
 	}
 
-	std::cout << "HEy" << std::endl;
-	std::cout << s.shortestSpan() << std::endl;
-	std::cout << s.longestSpan() << std::endl;
+	std::cout << "Shortest Span: " << s.shortestSpan() << std::endl;
+	std::cout << "Longestest Span: " << s.longestSpan() << std::endl;
 	
 	///////////////////TWO
 	Span s2(0);
@@ -66,7 +65,14 @@ int main(void)
 		nums.push_back(i + 1);
 		s3.addNumber(i + 10);
 	}
+	
+	std::cout << COLOR_GREEN << "Before change: " << COLOR_DEFAULT << std::endl;
+	for(unsigned int i = 0; i < s3.getSpan().size(); i++)
+		std::cout << s3.getSpan().at(i) << " ";
+	std::cout << std::endl;
+		
 	s3.addMultipleNUmbers(nums.begin(), nums.end());
+	std::cout << COLOR_GREEN << "After change: " << COLOR_DEFAULT << std::endl;
 	for(unsigned int i = 0; i < s3.getSpan().size(); i++)
 		std::cout << s3.getSpan().at(i) << " ";
 	
